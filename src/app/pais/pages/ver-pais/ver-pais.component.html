@@ -1,0 +1,26 @@
+<div class="alert alert-info" *ngIf="!pais; else divPais">Espere por favor</div>
+
+
+<ng-template #divPais>
+    <div class="row">
+        <div class="col-12">
+            <h1>País: <small>{{pais.name}}</small></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais.flag" alt="Bandera del País" class="img-thumbmail">
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población</strong>
+                    {{pais.population | number}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</ng-template>
